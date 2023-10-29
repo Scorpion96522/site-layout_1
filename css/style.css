@@ -65,6 +65,8 @@ body {
     --color-light: #FFFFFF;
     --color-gray: #838383;
     --color-dark: #1D1D1F;
+
+    --ofset: 190px;
 }
 
 .visually-hidden {
@@ -106,6 +108,7 @@ font-size: 17px;
 font-weight: 600;
 line-height: 21px;
 text-align: center;
+transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .btn--light {
@@ -113,9 +116,19 @@ text-align: center;
   background-color: var(--color-light);
 }
 
+.btn--light:hover {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
 .btn--dark {
   color: var(--color-light);
   background-color: var(--color-dark);
+}
+
+.btn--dark:hover {
+  color: var(--color-dark);
+  background-color: var(--color-light);
 }
 
 .grid {
@@ -157,6 +170,11 @@ font-size: 16px;
 font-weight: 400;
 line-height: 19px;
 color: var(--color-light);
+transition: color 0.3s ease-in-out;
+}
+
+.nav__link:hover {
+  color: var(--color-gray);
 }
 
 .logo {
@@ -170,6 +188,8 @@ color: var(--color-light);
   margin-right: 35px;
   width: 24px;
   height: 24px;
+  color: var(--color-light);
+  transition: color 0.3s ease-in-out;
 }
 
 .header__search svg {
@@ -177,12 +197,18 @@ display: block;
 width: 100%; 
 height: 100%;
 object-fit: cover;
+stroke: currentColor;
+}
+
+.header__search:hover {
+  color: var(--color-gray);
 }
 
 .hero {
   padding-top: calc(120px + 150px);
+  padding-bottom: 40px;
   height: 100vh;
-  min-height: 800px;
+  min-height: 900px;
   background-image: url(../img/hero-cover.jpg);
   background-position: center;
   background-size: cover;
@@ -210,8 +236,8 @@ color: var(--color-light);
 }
 
 .about__top {
-  padding-top: 190px;
-  margin-bottom: 190px;
+  padding-top: var(--ofset);
+  margin-bottom: var(--ofset);
 }
 
 .about__item:not(:last-child) {
@@ -273,6 +299,8 @@ color: var(--color-dark);
   width: 100px;
   height: 100px;
   transform: translate(-50%, -50%);
+  color: var(--color-light);
+  transition: color 0.3s ease-in-out;
 }
 
 .about__play--hidden {
@@ -286,9 +314,17 @@ color: var(--color-dark);
   object-fit: cover;
 }
 
+.about__play circle {
+  fill: currentColor;
+}
+
+.about__play:hover {
+  color: var(--color-gray);
+}
+
 .portfolio {
-  padding-top: 190px;
-  padding-bottom: 190px;
+  padding-top: var(--ofset);
+  padding-bottom: var(--ofset);
 }
 
 .portfolio-item:not(:last-child) {
@@ -338,7 +374,7 @@ color: var(--color-gray);
 }
 
 .quote {
-  padding-bottom: 190px;
+  padding-bottom: var(--ofset);
 }
 
 .quote__content {
@@ -356,7 +392,7 @@ color: var(--color-dark);
 }
 
 .services {
-  padding-bottom: 190px;
+  padding-bottom: var(--ofset);
 }
 
 .quote__author {
@@ -375,7 +411,7 @@ color: var(--color-dark);
   width: 100%;
   height: 900px;
   object-fit: cover;
-  margin-bottom: 190px;
+  margin-bottom: var(--ofset);
 }
 
 .services-item {
